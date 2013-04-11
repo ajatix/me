@@ -1,0 +1,179 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ajay Viswanathan</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+    </head>
+    <body class="container">
+        <script src="js/jquery-1.9.1.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+
+        <script>
+            function summarize(val) {
+                var div = document.getElementById('main-content');
+                var div_area = document.getElementById('summary-content');
+                var btn = document.getElementById('summarize');
+
+                if (val == 'Summarize') {
+                    var x = document.getElementsByClassName('label-summary');
+                    div_area.innerHTML = [];
+                    for (var i = 0; i < x.length; i++) {
+                        //div_area.innerHTML = div_area.innerHTML + '<span class="' + x[i].className + '">' + x[i].textContent + "</span>" + "<br/>";
+                        div_area.innerHTML = div_area.innerHTML + x[i].textContent + "<br/>";
+                    }
+                    btn.textContent = 'Expand';
+
+                    div.hidden = true;
+                }
+                else {
+                    div.hidden = false;
+                    div_area.innerHTML = '';
+
+                    btn.textContent = 'Summarize';
+                }
+            }
+        </script>
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="brand" href="#">Home</a>
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#" id="drop1" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-tasks icon-white"></i> Projects <b class="caret"></b></a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                                <li><a href="#projects">Technical</a></li>
+                                <li><a href="#">Web design</a></li>
+                                <li><a href="#">Graphic design</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="portfolio.html" id="drop2" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-picture icon-white"></i> Designs <b class="caret"></b></a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="drop2">
+                                <li><a href="#">Graphic design</a></li>
+                                <li><a href="#">Web design</a></li>
+                                <li><a href="#">Videos</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#"><i class="icon-question-sign icon-white"></i> Quizzing</a></li>
+                        <li><a href="#"><i class="icon-globe icon-white"></i> Beyond studies</a></li>
+                        <li class="dropdown">
+                            <a href="#" id="drop3" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-bookmark icon-white"></i> Interests <b class="caret"></b></a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
+                                <li><a href="#"><i class="icon-film"></i> Movies</a></li>
+                                <li><a href="#"><i class="icon-star"></i> TV Shows</a></li>
+                                <li><a href="#"><i class="icon-music"></i> Music</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#"><i class="icon-camera icon-white"></i> Photography</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-header">
+            <div id="social-media-links" class="pull-right">
+                <a href="https://www.facebook.com/ajay.viswanathan?ref=tn_tnmn"><img src="img/facebook.png" width="32"/></a>
+                <a href="https://plus.google.com/108063682082368979905/posts?hl=en"><img src="img/google+.png" width="32"/></a>
+                <a href="#"><img src="img/linkedin.png" width="32"/></a>
+                <a href="https://twitter.com/ajayatkgp"><img src="img/twitter.png" width="32"/></a>
+                <a href="http://www.youtube.com/user/ajayViswanathan?feature=mhee"><img src="img/youtube.png" width="32"/></a>
+                <a href="#"><img src="img/skype.png" width="32"/></a>
+                <a href="#"><img src="img/flickr.png" width="32"/></a>
+                <a href="https://github.com/ajatix"><img src="img/github.png" width="32"/></a>
+            </div>
+            <h1>Ajay Viswanathan</h1>
+            <p class="lead">Coder . Designer . Quizzer</p>
+        </div>
+
+        <div class="navbar navbar-inverse navbar-fixed-bottom">
+            <div class="navbar-inner">
+                <div class="container">
+                    <div id="resume-download-links" class="pull-right">
+                        <span class="muted">Download resume</span>
+                        <a href="https://www.facebook.com/ajay.viswanathan?ref=tn_tnmn"><img src="img/acrobat.png" title="Resume in PDF" width="32"/></a>
+                        <a href="https://plus.google.com/108063682082368979905/posts?hl=en"><img src="img/word.png" title="Resume in Word DOC" width="32"/></a>
+                    </div>
+                    <a class="brand" href="#">Shorten resume</a>
+                    <p>
+                        <button id="summarize" class="btn btn-success btn-small" onclick='summarize(textContent);'>Summarize</button>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="summary-content" class="text-center"></div>
+        
+        <div id="myCarousel" class="carousel slide">
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+  <!-- Carousel items -->
+  <div class="carousel-inner">
+    <div class="active item"><img class="img-rounded" src="img/twitter.png" alt=""></div>
+    <div class="item"><img class="img-rounded" src="img/twitter.png" alt=""></div>
+    <div class="item"><img class="img-rounded" src="img/twitter.png" alt=""></div>
+  </div>
+  <!-- Carousel nav -->
+  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+</div>
+        
+        <ul class="thumbnails">
+  <li class="span4">
+    <div class="thumbnail">
+      <a href="#myModal" data-toggle="modal"><img class="img-rounded" src="https://lh5.googleusercontent.com/-cwI57TSjeL0/UWPeAzPbkJI/AAAAAAAAB08/PWyrTJHBB8A/s1006/baski+schedule.jpg" alt=""></a>
+      <h3>Thumbnail label</h3>
+      <p>Thumbnail caption...</p>
+    </div>
+  </li>
+    <li class="span4">
+    <div class="thumbnail">
+      <a href="#myModal" data-toggle="modal"><img class="img-rounded" src="img/twitter.png" alt=""></a>
+      <h3>Thumbnail label</h3>
+      <p>Thumbnail caption...</p>
+    </div>
+  </li>
+    <li class="span4">
+    <div class="thumbnail">
+      <a href="#myModal" data-toggle="modal"><img class="img-rounded" src="img/facebook.png" alt=""></a>
+      <h3>Thumbnail label</h3>
+      <p>Thumbnail caption...</p>
+    </div>
+  </li>
+</ul>
+ 
+<!-- Modal -->
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Image</h3>
+  </div>
+  <div class="modal-body">
+    <img class="img-rounded" src="https://lh5.googleusercontent.com/-cwI57TSjeL0/UWPeAzPbkJI/AAAAAAAAB08/PWyrTJHBB8A/s1006/baski+schedule.jpg" alt="">
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button class="btn btn-primary">Save image</button>
+  </div>
+</div>
+        
+      
+
+        <div class="footer">
+            <hr/>
+            <div class="container">
+                <p class="muted">Site design by <span class="label label-default">Ajay Viswanathan</span>. Built on <a href="http://twitter.github.io/bootstrap/index.html"><span class="label label-info">Bootstrap</span></a>.</p>
+            </div>
+        </div>
+    </body>
+</html>

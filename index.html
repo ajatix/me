@@ -1,0 +1,426 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ajay Viswanathan</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+    </head>
+    <body class="container">
+        <script src="js/jquery-1.9.1.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+
+        <script>
+            function summarize(val) {
+                var div = document.getElementById('main-content');
+                var div_area = document.getElementById('summary-content');
+                var btn = document.getElementById('summarize');
+
+                if (val == 'Summarize') {
+                    var x = document.getElementsByClassName('label-summary');
+                    div_area.innerHTML = [];
+                    for (var i = 0; i < x.length; i++) {
+                        //div_area.innerHTML = div_area.innerHTML + '<span class="' + x[i].className + '">' + x[i].textContent + "</span>" + "<br/>";
+                        div_area.innerHTML = div_area.innerHTML + x[i].textContent + "<br/>";
+                    }
+                    btn.textContent = 'Expand';
+
+                    div.hidden = true;
+                }
+                else {
+                    div.hidden = false;
+                    div_area.innerHTML = '';
+
+                    btn.textContent = 'Summarize';
+                }
+            }
+        </script>
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="brand" href="#">Home</a>
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#" id="drop1" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-tasks icon-white"></i> Projects <b class="caret"></b></a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                                <li><a href="#projects">Technical</a></li>
+                                <li><a href="#">Web design</a></li>
+                                <li><a href="#">Graphic design</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="portfolio.html"><i class="icon-picture icon-white"></i> Designs</a>
+                        </li>
+                        <li><a href="#"><i class="icon-question-sign icon-white"></i> Quizzing</a></li>
+                        <li><a href="#"><i class="icon-globe icon-white"></i> Beyond studies</a></li>
+                        <li class="dropdown">
+                            <a href="#" id="drop3" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-bookmark icon-white"></i> Interests <b class="caret"></b></a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
+                                <li><a href="#"><i class="icon-film"></i> Movies</a></li>
+                                <li><a href="#"><i class="icon-star"></i> TV Shows</a></li>
+                                <li><a href="#"><i class="icon-music"></i> Music</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#"><i class="icon-camera icon-white"></i> Photography</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-header">
+            <div id="social-media-links" class="pull-right">
+                <a href="https://www.facebook.com/ajay.viswanathan?ref=tn_tnmn"><img src="img/facebook.png" width="32"/></a>
+                <a href="https://plus.google.com/108063682082368979905/posts?hl=en"><img src="img/google+.png" width="32"/></a>
+                <a href="#"><img src="img/linkedin.png" width="32"/></a>
+                <a href="https://twitter.com/ajayatkgp"><img src="img/twitter.png" width="32"/></a>
+                <a href="http://www.youtube.com/user/ajayViswanathan?feature=mhee"><img src="img/youtube.png" width="32"/></a>
+                <a href="#"><img src="img/skype.png" width="32"/></a>
+                <a href="#"><img src="img/flickr.png" width="32"/></a>
+                <a href="https://github.com/ajatix"><img src="img/github.png" width="32"/></a>
+            </div>
+            <h1>Ajay Viswanathan</h1>
+            <p class="lead">Coder . Designer . Quizzer</p>
+        </div>
+
+        <div class="navbar navbar-inverse navbar-fixed-bottom">
+            <div class="navbar-inner">
+                <div class="container">
+                    <div id="resume-download-links" class="pull-right">
+                        <span class="muted">Download resume</span>
+                        <a href="https://www.facebook.com/ajay.viswanathan?ref=tn_tnmn"><img src="img/acrobat.png" title="Resume in PDF" width="32"/></a>
+                        <a href="https://plus.google.com/108063682082368979905/posts?hl=en"><img src="img/word.png" title="Resume in Word DOC" width="32"/></a>
+                    </div>
+                    <a class="brand" href="#">Shorten resume</a>
+                    <p>
+                        <button id="summarize" class="btn btn-success btn-small" onclick='summarize(textContent);'>Summarize</button>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="summary-content" class="text-center"></div>
+
+        <div id="main-content">
+            <div id="hr-info" class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span4">
+                        <h3>Philosophy</h3>
+                        I belive in working hard for my goals. I am always ready to put in that extra extra in everything I do.
+                    </div>
+                    <div class="span4">
+                        <h3>Background</h3>
+                    </div>
+                    <div class="span4">
+                        <h3>Education</h3>
+                        I'm currently pursuing my Dual-degree M.Tech degree in <span class="label label-important label-summary">Visual information processing and Embedded Systems</span> at <span class="label label-info label-summary">IIT Kharagpur</span>. I spent my schooling days at <span class="label label-info">Navrachana High School, Vadodara</span>.
+                    </div>
+                </div>
+            </div>
+
+            <br class="label-summary"/>
+
+            <div id="skills" class="container">
+                <h3>Expertise</h3>
+
+                <div class="tabbable"> <!-- Only required for left/right tabs -->
+                    <ul class="nav nav-pills">
+                        <li class="active"><a href="#tab1" data-toggle="tab">Programming</a></li>
+                        <li><a href="#tab2" data-toggle="tab">Web design</a></li>
+                        <li><a href="#tab3" data-toggle="tab">Graphic design</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab1">
+                            <h6>Languages</h6>
+                            <a class="btn btn-small btn-success label-summary" type="button">C++</a>
+                            <a class="btn btn-small btn-success" type="button">C</a>
+                            <a class="btn btn-small btn-success label-summary" type="button">Matlab</a>
+                            <a class="btn btn-small btn-success" type="button">Python</a>
+                            <a class="btn btn-small btn-warning" type="button">Java</a>
+                            <a class="btn btn-small btn-danger" type="button">Linux Shell</a>
+                            <a class="btn btn-small btn-warning" type="button">8051 Assembly Language</a>
+                            <h6>Libraries and Software packages</h6>
+                            <a class="btn btn-small btn-success label-summary" type="button">OpenCV</a>
+                            <a class="btn btn-small btn-warning label-summary" type="button">IPP</a>
+                            <a class="btn btn-small btn-danger label-summary" type="button">Nvidia CUDA</a>
+                            <a class="btn btn-small btn-warning" type="button">Mathematica</a>
+                            <a class="btn btn-small btn-success" type="button">NI Multisim</a>
+                        </div>
+                        <div class="tab-pane" id="tab2">
+                            <h6>Scripting Languages</h6>
+                            <a class="btn btn-small btn-success" type="button">HTML5</a>
+                            <a class="btn btn-small btn-success" type="button">CSS3</a>
+                            <a class="btn btn-small btn-success" type="button">Javascript</a>
+                            <a class="btn btn-small btn-warning" type="button">PHP</a>
+                            <a class="btn btn-small btn-warning" type="button">MySQL</a>
+                            <a class="btn btn-small btn-danger" type="button">Ruby</a>
+                            <h6>Libraries and Software packages</h6>
+                            <a class="btn btn-small btn-success" type="button">Sencha Touch</a>
+                            <a class="btn btn-small btn-success" type="button">Wordpress CMS</a>
+                            <a class="btn btn-small btn-success" type="button">D3.js</a>
+                        </div>
+                        <div class="tab-pane" id="tab3">
+                            <h6>Adobe Creative Suite</h6>
+                            <a class="btn btn-small btn-warning" type="button">Flash</a>
+                            <a class="btn btn-small btn-success" type="button">Photoshop</a>
+                            <a class="btn btn-small btn-success label-summary" type="button">After Effects</a>
+                            <a class="btn btn-small btn-success" type="button">Premier Pro</a>
+                            <a class="btn btn-small btn-success" type="button">Indesign</a>
+                            <a class="btn btn-small btn-success" type="button">Dreamweaver</a>
+                            <a class="btn btn-small btn-warning" type="button">Soundbooth</a>
+                            <a class="btn btn-small btn-warning" type="button">Encore</a>
+                            <a class="btn btn-small btn-warning" type="button">Illustrator</a>
+                            <h6>Other Software</h6>
+                            <a class="btn btn-small btn-warning label-summary" type="button">Blender 3D</a>
+                            <a class="btn btn-small btn-success" type="button">Sony Vegas</a>
+                            <a class="btn btn-small btn-warning" type="button">Inkscape</a>
+                            <a class="btn btn-small btn-success" type="button">Gimp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <small class="pull-right"><span class="label label-success">Green</span> - Advanced, <span class="label label-warning">Orange</span> - Intermediate, <span class="label label-important">Red</span> - Beginner</small>
+
+            <br class="label-summary"/>
+
+            <div id="projects" class="container">
+                <h3>Projects</h3>
+                <dl class="dl-horizontal">
+                    <blockquote class='pull-right'>
+                        <p><span class="label-summary">Rate distortion optimization for video-conferencing applications</span></p>
+                        <small>B.Tech Project, Dept. of Electronics and Electrical Communication Engineering, IIT Kharagpur</small>
+                    </blockquote>
+                    <hr/>
+                    <br/>
+                    <dt>Jan 2013-till date</dt>
+                    <dd>
+                        <ul>
+                            <li>Project under guidance Prof. Somnath Sengupta, Department of Electronics and Electrical Communication, IIT Kharagpur</li>
+                            <li>Researching on <span class="label label-info">rate-distortion algorithms</span> for use in a video conferencing application</li>
+                            <li><span class="label label-success label-summary">Implemented an adaptive window filter</span> for temporal and spatial prediction of video frames</li>
+                        </ul>
+                    </dd>
+                </dl>
+                <br/>
+                <dl class="dl-horizontal">
+                    <blockquote class='pull-right'>
+                        <p><span class="label-summary">A new method of classification of voiced/unvoiced speech segments using fuzzy aggregation of features</span></p>
+                        <small>B.Tech Project, Dept. of Electronics and Electrical Communication Engineering, IIT Kharagpur</small>
+                    </blockquote>
+                    <hr/>
+                    <br/>
+                    <dt>Jul 2012 - Nov 2012</dt>
+                    <dd>
+                        <ul>
+                            <li>Project under guidance Prof. Somnath Sengupta, Department of Electronics and Electrical Communication, IIT Kharagpur</li>
+                            <li>Theorized a model for decision of voiced/unvoiced signal using a multi-feature classification algorithm based on fuzzy aggregation of speech features and measuring the Choquet integral over the fuzzy set</li>
+                        </ul>
+                    </dd>
+                </dl>
+                <br/>
+                <dl class="dl-horizontal">
+                    <blockquote class='pull-right'>
+                        <p><span class="label-summary">Lung defect classification using Kohonen Self-organizing maps</span></p>
+                        <small>Term Project, Machine Learning and Expert Systems</small>
+                    </blockquote>
+                    <hr/>
+                    <br/>
+                    <dt>Oct 2012</dt>
+                    <dd>
+                        <ul>
+                            <li>In other projects, built a digit recognition system using <span class="label label-important">Artificial Neural Networks</span></li>
+                            <li>Built a spam classifier using <span class="label label-important">Support Vector Machines</span></li>
+                            <li><a href="https://github.com/ajatix/MLCoursera.git">Code repository</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+                <br/>
+                <dl class="dl-horizontal">
+                    <blockquote class='pull-right'>
+                        <p><span class="label-summary">Mobility of Enterprise Applications</span></p>
+                        <small>Summer Intern, Infosys Limited, Product research and Development division</small>
+                    </blockquote>
+                    <hr/>
+                    <br/>
+                    <dt>May 2012 - Jul 2012</dt>
+                    <dd>
+                        <ul>
+                            <li><span class="label label-success label-summary">Presented a business case</span> in favour of developing web apps for their banking application</li>
+                            <li>Researched on different frameworks and options available for developing a tablet application</li>
+                            <li>Developed a prototype model using the Sencha Touch 2 framework, HTML5, CSS3 and JavaScript</li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+
+            <br class="label-summary"/>
+
+            <div id="pors" class="container">
+                <h3>Positions of responsibilities</h3>
+                <dl class="dl-horizontal">
+                    <blockquote class='pull-right'>
+                        <p><span class="label-summary">Executive Editor, The Scholars' Avenue</span></p>
+                        <small>A student-run news body of IIT Kharagpur</small>
+                    </blockquote>
+                    <hr/>
+                    <br/>
+                    <dt>2009-till date</dt>
+                    <dd>
+                        <ul>
+                            <li><span class='label-summary'>Responsible for planning and coordination of the print and web issue, managing a team of 30 students</span></li>
+                            <li><span class="label label-success label-summary">Produced a documentary</span> on the annual student elections</li>
+                            <li>Made innovative IT solutions to simply data collection from surveys and producing compiled reports from them</li>
+                            <li>Have designed many <span class='label label-info'>posters, advertisements, web-sites, interactive data-analytics</span> and have written about myriad campus events</li>
+                        </ul>
+                    </dd>
+                </dl>
+                <br/>
+                <dl class="dl-horizontal">
+                    <blockquote class='pull-right'>
+                        <p><span class="label-summary">Governor, Quiz Club</span></p>
+                        <small>Gymkhana IIT Kharagpur</small>
+                    </blockquote>
+                    <hr/>
+                    <br/>
+                    <dt>2013-2014</dt>
+                    <dd>
+                        <ul>
+                            <li><span class='label label-info'>This is the highest nominated post in a gymkhana society.</span></li>
+                        </ul>
+                    </dd>
+                </dl>
+                <br/>
+                <dl class="dl-horizontal">
+                    <blockquote class='pull-right'>
+                        <p><span class="label-summary">Captain, Advertisement Design</span></p>
+                        <small>Nehru Hall, IIT Kharagpur</small>
+                    </blockquote>
+                    <hr/>
+                    <br/>
+                    <dt>2012-2013</dt>
+                    <dd>
+                        <ul>
+                            <li>Instrumental in <span class="label label-important label-summary">coordinating a team of over 20 students</span> and producing an advertisement campaign for an Inter-hostel competition</li>
+                            <li>Oversaw conception and execution of 6 deliverables required for the event and prepared the sales pitch</li>
+                            <li>Trained the junior batches for future events</li>
+                        </ul>
+                    </dd>
+                </dl>
+                <br/>
+                <dl class="dl-horizontal">
+                    <blockquote class='pull-right'>
+                        <p><span class="label-summary">Captain, Debate</span></p>
+                        <small>Nehru Hall, IIT Kharagpur</small>
+                    </blockquote>
+                    <hr/>
+                    <br/>
+                    <dt>2012-2013</dt>
+                    <dd>
+                        <ul>
+                            <li>Instrumental in coordinating between students in preparing for the annual debating competition</li>
+                            <li>Organized discussions on the given topic among a team of over 15 students for the three days leading to the event</li>
+                        </ul>
+                    </dd>
+                </dl>
+                <br/>
+                <dl class="dl-horizontal">
+                    <blockquote class='pull-right'>
+                        <p><span class="label-summary">Captain, Technology Quiz</span></p>
+                        <small>Nehru Hall, IIT Kharagpur</small>
+                    </blockquote>
+                    <hr/>
+                    <br/>
+                    <dt>2012-2013</dt>
+                    <dd>
+                        <ul>
+                            <li>Instrumental in coordinating between students in preparing for the annual quiz competition</li>
+                            <li>Responsible for conducting weekly meetings and practice for a team of over 10 students</li>
+                            <li>Scouting and training talent in junior batches and <span class="label label-important label-summary">organizing visits to nearby cities to attend quizzing events</span></li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+
+            <br class="label-summary"/>
+
+            <div id="certis" class="container">
+                <h3>Certifications</h3>
+                <dl class="dl-horizontal">
+                    <blockquote class='pull-right'>
+                        <p><span class="label-summary">12th Plan Hackathon, Planning Commission of India</span></p>
+                        <small>Second place, Web app development, IIT Kharagpur</small>
+                    </blockquote>
+                    <hr/>
+                    <br/>
+                    <dt>Apr 2013</dt>
+                    <dd>
+                        <ul>
+                            <li>Developed a tool to <span class="label-summary">automatically interpret tabular data into physical maps</span> and provided an interface for data analysis by comparision</li>
+                            <li><a href="http://ajatix.github.io/mapviz/">Link to the demo</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+                <br/>
+                <dl class="dl-horizontal">
+                    <blockquote class='pull-right'>
+                        <p><span class="label-summary">Yahoo! HackU 2013</span></p>
+                        <small>Participant, IIT Kharagpur</small>
+                    </blockquote>
+                    <hr/>
+                    <br/>
+                    <dt>Mar 2013</dt>
+                    <dd>
+                        <ul>
+                            <li>Developed a working browser plugin for Google Chrome that can be activated in user-defined pages to enable <span class="label label-success label-summary">webcam-based hand gesture interaction</span> in a 24-hour hackathon, applying concepts of image processing using JavaScript</li>
+                            <li><a href="https://github.com/ajatix/finalHack.git">Code repository</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+                <br/>
+                <dl class="dl-horizontal">
+                    <blockquote class='pull-right'>
+                        <p><span class="label-summary">Intel Ideation Camp</span></p>
+                        <small>Third place, B-plan competition, Global Entrepreneurship Summit 2013, IIT Kharagpur</small>
+                    </blockquote>
+                    <hr/>
+                    <br/>
+                    <dt>Jan 2013</dt>
+                    <dd>
+                        <ul>
+                            <li>Completed the courseware, practical training and evaluations under the Intel College Excellence Program and presented a BPlan ideated during the camp, winning the Bronze position</li>
+                        </ul>
+                    </dd>
+                </dl>
+                <br/>
+                <dl class="dl-horizontal">
+                    <blockquote class='pull-right'>
+                        <p><span class="label-summary">Machine Learning</span></p>
+                        <small>Statement of Accomplishment, Coursera</small>
+                    </blockquote>
+                    <hr/>
+                    <br/>
+                    <dt>2012-2013</dt>
+                    <dd>
+                        <ul>
+                            <li>Completed requirements for online course including Programming assignments</li>
+                            <li><a href="http://goo.gl/QOvK3">Statement of Accomplishment</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="footer">
+            <hr/>
+            <div class="container">
+                <p class="muted">Site design by <span class="label label-default">Ajay Viswanathan</span>. Built on <a href="http://twitter.github.io/bootstrap/index.html"><span class="label label-info">Bootstrap</span></a>.</p>
+            </div>
+        </div>
+    </body>
+</html>
